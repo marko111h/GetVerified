@@ -25,7 +25,10 @@
     margin-right: 20px;
   }
 }
-
+@keyframes slideDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
 
 
 * {
@@ -51,7 +54,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 10px 30px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
@@ -59,6 +62,9 @@
     top: 0;
     left: 0;
     z-index: 10;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.6s ease forwards;
   }
   
   .navbar .logo {
@@ -78,11 +84,15 @@
   
   .nav-links a {
     color: #00796B; /* Dark blue */
-    font-weight: bold;
-    transition: color 0.3s;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
   }
   
   .nav-links a:hover {
+    background-color: #E0F2F1;
     color: #004D40; /* Darker shade */
   }
   
