@@ -14,56 +14,78 @@
 
   <!-- Navbar -->
   <nav class="navbar">
-    <img src="../assets/FullLogo.png" alt="Your Company Logo" class="logo">
+    <div class="logo">
+    <img src="../assets/FullLogo.png" alt="Your Company Logo" class="logo" >
+  </div>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="/services/index.html">Services</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="../contact/index.html">Contact</a></li>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="services/index.html">Services</a></li>
+      <li><a href="../aboutus/index.html">About Us</a></li>
+      <li><a href="/contact/index.html">Contact</a></li>
     </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
   </nav>
 
   <!-- Services Section -->
   <section id="services" class="services-section">
+    
+    
+    <div class="content"> 
     <h2>Our Services</h2>
-    <h3>Business messaging that helps you wow customers from the beginning.</h3>
-    <p>We offer businesses the ability to interact with their customers in more ways than ever before. We provide various communication channels for businesses of all sizes and the ability to turn a monologue into customer dialogue and vice versa. Boost your customer satisfaction and profit margin with this perfect blend of enterprise-grade messaging technology. Turn silos into synergies by tearing down boundaries that separate communications channels. Through a single interface that operates across all major mobile platforms, you can now deliver an unprecedented level of customer engagement. Our goal is to provide our clients with the latest technology and communication channels that will help them communicate more effectively with every single one of their customers.</p>
+    <h3>Business messaging that delights your customers from the very beginning.</h3>
+    <p>We provide businesses with the ability to communicate with their customers in innovative new ways. Our platform offers various communication channels, adaptable for businesses of all sizes. Transform one-way messaging into interactive dialogues and vice versa. Increase customer satisfaction and boost profits with the perfect blend of advanced business messaging technology. Break down barriers between communication channels and create synergy. Through a single interface that works across all major mobile platforms, you can offer an unparalleled customer engagement experience. Our goal is to provide our clients with the latest technology and communication tools to help them communicate more effectively with each and every one of their customers.</p>
+    </div>
+
     <div class="service-cards">
       <div class="service-card">
+        <i class="fas fa-comments service-icon"></i>
         <h3>A2P Messaging</h3>
-        <p>Connect globally and take customer engagement to a personal level with A2P messaging. With a simple click, you can manage all of your messages to any number in the world. If you want to send or receive an SMS message from anyone anywhere, we have just what may be right for you!</p>
+        <p>Connect globally and engage with your customers on a personal level via A2P messaging. With a single click, you can manage all your messages to any number worldwide. Whether you want to send or receive an SMS message, we have the solution for you!</p>
       </div>
       <div class="service-card">
+        <i class="fas fa-search-location service-icon"></i>
         <h3>MNP Lookup</h3>
-        <p>The Mobile Number Portability (MNP) lookup service for domestic and international numbers is a powerful tool for checking the result of a porting request. Say goodbye to confusion with this effortless function. This port query does not validate numbers – please use the HLR Query for that purpose instead</p>
+        <p> Our Mobile Number Portability (MNP) lookup service allows you to easily check the status of porting requests for both domestic and international numbers. Say goodbye to confusion with this simple and effective function.</p>
       </div>
       <div class="service-card">
+        <i class="fab fa-google service-icon"></i>
         <h3>Google Business Messaging</h3>
-        <p>Keep in touch with customers anytime, anywhere by responding to their queries just like a real-time conversation over Gmail without ever needing to leave the "Search" results page. Make Google Business Messaging part of your go-to solution!</p>
+        <p> Stay in touch with customers anytime, anywhere by responding to their inquiries in real-time, just like a conversation on Gmail. Google Business Messaging is the perfect addition to your business solution!</p>
       </div>
       <div class="service-card">
+        <i class="fab fa-viber service-icon"></i>
         <h3>Viber Business Messaging</h3>
-        <p>Use Viber's rich media messaging solution for business with personalized one-on-one conversations. Personalize your message and convey a sense of your brand from the first impression.</p>
+        <p>Use Viber's rich media messaging solution for business communications. Personalize your messages and make a great first impression that reflects your brand.
+        </p>
       </div>
       <div class="service-card">
+        <i class="fas fa-exchange-alt service-icon"></i>
         <h3>Two-Way SMS</h3>
-        <p>Increase productivity and strengthen customer relationships with a two-way messaging service to build an interactive user experience. Send timely reminders, promotions, or announcements to your customers with a single click!</p>
+        <p>Boost productivity and strengthen customer relationships with our two-way messaging service. Send reminders, promotions, or announcements to your customers with just one click!</p>
       </div>
       <div class="service-card">
+        <i class="fas fa-database service-icon"></i>
         <h3>HLR Service</h3>
-        <p>Whether you want to verify the numbers in your database for accuracy or need accurate customer data, our HLR service delivers everything you need. Keep your database secure and remove friction with accurate, real-time information—instantly.</p>
+        <p>Our Home Location Register (HLR) service helps you verify the accuracy of numbers in your database or ensure that you have the right customer information. Keep your database secure with accurate, real-time data!</p>
       </div>
       <div class="service-card">
+        <i class="fab fa-whatsapp service-icon"></i>
         <h3>WhatsApp Business Messaging</h3>
-        <p>Never worry about international borders or sleepless nights ever again with this easy-to-use platform, which includes everything from private chat rooms to multimedia sharing -- you have it all right on your phone!</p>
+        <p>Never worry about borders or time zones again. Our easy-to-use platform offers everything from private chat rooms to multimedia sharing — all right on your phone!</p>
       </div>
       <div class="service-card">
-        <h3>Voice</h3>
-        <p>Create an innovative voice interaction that's enjoyable and easy to maintain. The product will support various options, from the Voice SDK with interactive voice response, recording transcriptions, speech recognition - anything your business could want or need for a reliable experience.</p>
+        <i class="fas fa-microphone service-icon"></i>
+        <h3>Voice Communication</h3>
+        <p> Create an innovative and easy-to-maintain voice interaction solution. Our product supports a variety of options, including a voice SDK with interactive responses, recording transcriptions, and speech recognition – everything your business needs for a reliable experience</p>
       </div>
       <div class="service-card">
+        <i class="fas fa-envelope-open-text service-icon"></i>
         <h3>RCS Messaging</h3>
-        <p>With RCS, businesses can transform their text messages into a rich media experience with video, audio, images and more. RCS also has an interactive response app that enables business to have guided conversations with their customers in-app - without ever having to download or install anything!</p>
+        <p>With RCS, businesses can transform their text messages into rich multimedia experiences with video, audio, images, and more. The interactive response app allows businesses to have guided conversations with customers, all within the app – without any need to download or install anything!</p>
       </div>
     </div>
   </section>
@@ -80,6 +102,6 @@
   
 
 
-  <script src="script.js"></script>
+  <script src="../script.js"></script>
 </body>
 </html>

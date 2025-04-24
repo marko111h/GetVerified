@@ -30,15 +30,20 @@
   100% { transform: translateY(0); opacity: 1; }
 }
 
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+  :root {
+  /* Font */
+  --font-inter: 'Inter', sans-serif;
+  --font-default: Arial, sans-serif;
+  }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-default);
     background-color: #E0F7FA; /* Light blue background */
     color: #212121;
     padding-top: 60px;
@@ -48,57 +53,10 @@
     text-decoration: none;
     color: inherit;
   }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.6s ease forwards;
-  }
-  
-  .navbar .logo {
-    height: 50px;
-    width: auto;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    font-size: 16px;
-  }
-  
-  .nav-links a {
-    color: #00796B; /* Dark blue */
-    font-weight: 600;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    background-color: #E0F2F1;
-    color: #004D40; /* Darker shade */
-  }
-  
-  
+
   /* Hero Section */
   .hero-section {
+    font-family: var(--font-inter);
     padding-top: 80px;
     position: relative;
     height: 100vh;
@@ -136,7 +94,9 @@
     margin-top: 20px;
   }
   
+  
   .cta-btn {
+    font-family: var(--font-inter);
     display: inline-block;
     padding: 15px 30px;
     background-color: #004D40;
@@ -148,7 +108,7 @@
   }
   
   .cta-btn:hover {
-    background-color: #00796B;
+    background-color: #00A4D9;
   }
   
   
@@ -202,15 +162,16 @@
 
    /* why US section */
   .whyus-section {
-  background-color: #f5f7fa;
-  padding: 80px 20px;
+  background-color: #f9f9f9;
+  padding: 60px 20px;
   text-align: center;
+  color: #333
 }
 
 .whyus-section .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #2c3e50;
+  color: #1a1a1a;
   margin-bottom: 10px;
 }
 
@@ -222,15 +183,18 @@
 
 .whyus-logo {
   display: block;
-  margin: 30px auto;
+  margin: 0 auto 40px;
   max-width: 220px;
   height: auto;
+  transition: transform 0.3s ease;
 }
-
+.whyus-logo:hover {
+  transform: scale(1.1);
+}
 .whyus-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 40px;
@@ -238,108 +202,30 @@
 
 .whyus-card {
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   
+}
+.whyus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
 }
 
 .whyus-card h4 {
-  font-size: 22px;
-  color: #34495e;
-  margin-bottom: 10px;
+  font-size: 20px;
+  color: #007BFF; /* zameni sa primarnom bojom sajta */
+  margin-bottom: 15px;
+
 }
 
 .whyus-card p {
   
+  font-size: 16px;
   color: #555;
-  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
   
-  /* About Section */
-  .about-section {
-    padding: 80px 20px;
-    text-align: center;
-    background-color: #00796B; /* Dark greenish-blue */
-    color: white;
-  }
-  
-  .about-section h2 {
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .about-section p {
-    font-size: 18px;
-    max-width: 800px;
-    margin: 20px auto;
-  }
-  
-  /* Contact Section */
-  .contact-section {
-    padding: 80px 20px;
-    background-color: white;
-    text-align: center;
-  }
-  
-  .contact-section h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #00796B;
-  }
-  
-  .contact-form {
-    max-width: 600px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 15px;
-    border: 1px solid #BDBDBD;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  
-  .submit-btn {
-    background-color: #00796B;
-    color: white;
-    padding: 15px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .submit-btn:hover {
-    background-color: #004D40;
-  }
-  
-  /* Footer */
-  .footer {
-    background-color: #00796B;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 20px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #E0F7FA;
-  }
-  
-  .footer p {
-    margin-top: 20px;
-    font-size: 14px;
-  }
   

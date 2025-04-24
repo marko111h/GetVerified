@@ -1,0 +1,83 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html, body {
+    height: 100%;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E0F7FA; /* Light blue background */
+    color: #212121;
+    line-height: 1.6;
+}
+  
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* About Us Page Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #E0F7FA; /* svetlo plava */
+    color: #212121;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .hero-section {
+    background-color: #00BCD4;
+    color: white;
+    text-align: center;
+    padding: 100px 20px 60px;
+  }
+  
+  .hero-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+  }
+  
+  .hero-section p {
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: 300;
+  }
+  
+  .about-content {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  .about-content section {
+    padding: 40px 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .about-content section:last-child {
+    border-bottom: none;
+  }
+  
+  .about-content h2 {
+    font-size: 28px;
+    color: #00ACC1;
+    margin-bottom: 15px;
+  }
+  
+  .about-content p {
+    font-size: 17px;
+    color: #424242;
+    line-height: 1.7;
+    text-align: justify;
+  }
+  
+  footer {
+    margin-top: 60px;
+  }
+  

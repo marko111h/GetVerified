@@ -37,7 +37,7 @@
   }
   
   .nav-links a {
-    color: #00796B; /* Dark blue */
+    color: #00A4D9; /* Dark blue */
     font-weight: 600;
     font-size: 16px;
     padding: 8px 12px;
@@ -49,10 +49,56 @@
     background-color: #E0F2F1;
     color: #004D40; /* Darker shade */
   }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #018d7c;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
   
+/* Responzivni dizajn */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: white;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    animation: slideDown 0.6s ease forwards;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links li {
+    font-size: 18px;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+  }
+}
   /* Footer */
   .footer {
-    background-color: #00796B;
+    background-color: #00A4D9;
     color: white;
     padding: 40px 20px;
     text-align: center;

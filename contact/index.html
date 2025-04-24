@@ -16,17 +16,23 @@
 </head>
 <body>
   <div class="wrapper"> 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <img src="../assets/FullLogo.png" alt="Your Company Logo" class="logo">
+   <!-- Navbar -->
+   <nav class="navbar">
+    <div class="logo">
+    <img src="../assets/FullLogo.png" alt="Your Company Logo" class="logo" >
+  </div>
     <ul class="nav-links">
       <li><a href="/index.html">Home</a></li>
-      <li><a href="../services/index.html">Services</a></li>
-      <li><a href="#about">About Us</a></li>
+      <li><a href="/services/index.html">Services</a></li>
+      <li><a href="../aboutus/index.html">About Us</a></li>
       <li><a href="/contact/index.html">Contact</a></li>
     </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
   </nav>
-
   
 
   <!-- Contact Section -->
@@ -50,5 +56,6 @@
       <p class="copyright">© 2025 Your Company. All rights reserved.</p>
   </footer>
 
+  <script src="../script.js"></script>
 </body>
 </html>
