@@ -22,11 +22,19 @@
     text-decoration: none;
     color: inherit;
   }
-
+  .contact-img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
   /* Contact Section */
   .contact-section {
     padding: 120px 20px 80px; 
-    background-image: url("../assets/pozadinaLogo.png");
+   /* background-image: url("../assets/pozadinaLogo.png"); */
     background-size: contain;
     background-position: center; /* Centriraj sliku */
     background-repeat: no-repeat;
@@ -38,6 +46,7 @@
   }
   
   .contact-section h2 {
+    font-family: 'Poppins', sans-serif;
     font-size: 36px;
     font-weight: bold;
     color: #00A4D9;

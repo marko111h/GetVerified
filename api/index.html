@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="api.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">
+      <img src="/assets/FullLogo.png" alt="Your Company Logo" class="logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/services/index.html">Services</a></li>
+      <li><a href="/aboutus/index.html">About Us</a></li>
+      <li><a href="/api/index.html">API</a></li>
+      <li><a href="/contact/index.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+   <!-- Page Content -->
+   <header>
+    <h1>Alaris SMS HTTP API Documentation</h1>
+  </header>
+
+  <div class="api-container">
+    <!-- Section 1 -->
+    <section class="api-section">
+      <h2>1. Alaris SMS HTTP API</h2>
+      <p>Send SMS messages via HTTP requests. Below are supported formats.</p>
+
+      <h3>Request Formats:</h3>
+      <h4>GET (HTTP)</h4>
+      <pre>http://1.1.1.1:8001/api?username=&lt;username&gt;&password=&lt;password&gt;&ani=&lt;ani&gt;&dnis=&lt;dnis&gt;&message=&lt;message&gt;&command=submit&serviceType=&lt;type&gt;&longMessageMode=&lt;mode&gt;</pre>
+
+      <h4>GET (HTTPS)</h4>
+      <pre>https://domainname:8002/api?...same as above...</pre>
+
+      <h4>POST (Credentials in URL)</h4>
+      <pre>curl -X POST -H 'Content-Type: application/json' -d '{"ani":"ani","dnis":"dnis","message":"test"}' 'http://1.1.1.1:8001/api?command=submit&username=username&password=password'</pre>
+
+      <h4>POST (Credentials in JSON)</h4>
+      <pre>curl -X POST -H 'Content-Type: application/json' -d '{"username":"username","password":"password","command":"submit","ani":"ani","dnis":"dnis","message":"test"}' 'http://1.1.1.1:8001/api'</pre>
+
+      <h3>Parameters</h3>
+      <table class="parameter-table">
+        <thead>
+          <tr><th>Parameter</th><th>Description</th><th>Required</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>command</td><td>submit / query / mo</td><td>Yes</td></tr>
+          <tr><td>dnis</td><td>Destination (E.164 format)</td><td>Yes</td></tr>
+          <tr><td>message</td><td>Message content</td><td>Yes</td></tr>
+          <tr><td>username</td><td>API username</td><td>Yes</td></tr>
+          <tr><td>password</td><td>API password</td><td>Yes</td></tr>
+          <tr><td>serviceType</td><td>Service code</td><td>No</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Response Example:</h3>
+      <pre>{"message_id":"alss-a1b2c3d4-e5f67890"}</pre>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="api-section">
+      <h2>2. SMS Status Request API</h2>
+      <p>Use this to check delivery status of previously sent SMS.</p>
+
+      <h3>GET Request</h3>
+      <pre>http://1.1.1.1:8001/api?username=&lt;username&gt;&password=&lt;password&gt;&messageId=&lt;msgId&gt;&command=query</pre>
+
+      <h3>Parameters</h3>
+      <table class="parameter-table">
+        <thead>
+          <tr><th>Parameter</th><th>Description</th><th>Required</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>username</td><td>API username</td><td>Yes</td></tr>
+          <tr><td>password</td><td>API password</td><td>Yes</td></tr>
+          <tr><td>messageId</td><td>Message ID from submission</td><td>Yes</td></tr>
+          <tr><td>command</td><td>Set to “query”</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Response Example:</h3>
+      <pre>{"status": "DELIVRD", "delivery_time": "20210922093309", ...}</pre>
+    </section>
+  </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-icons">
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="copyright">© 2025 Your Company. All rights reserved.</p>
+      </footer>
+    
+      <script src="../script.js"></script>
+</body>
