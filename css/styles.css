@@ -88,6 +88,7 @@
     font-size: 48px;
     font-weight: bold;
   }
+ 
   
   .hero-section p {
     font-size: 18px;
@@ -215,7 +216,7 @@
 
 .whyus-card h4 {
   font-size: 20px;
-  color: #007BFF; /* zameni sa primarnom bojom sajta */
+  color: #00A4D9; /* zameni sa primarnom bojom sajta */
   margin-bottom: 15px;
 
 }

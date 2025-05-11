@@ -22,8 +22,13 @@
   }
   
   .navbar .logo {
-    height: 50px;
+    height: 60px;
     width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Blagi senka */
+    transition: transform 0.3s ease;
+  }
+  .navbar .logo:hover {
+    transform: scale(1.05); /* Blagi zoom efekat */
   }
   
   .nav-links {
