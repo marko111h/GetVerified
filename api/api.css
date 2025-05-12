@@ -1,8 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4faff;
-    padding: 20px;
     padding-top: 100px;
 }
 
@@ -13,6 +17,7 @@ a {
 
 header {
     margin-top: 100px;
+    text-align: center;
 }
 
 header h1 {
