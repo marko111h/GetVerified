@@ -1,88 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* ============================================
+   RESET & ROOT
+   ============================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-default: Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-inter), var(--font-default);
+  background-color: #E0F7FA;
+  color: #212121;
+  padding-top: 82px; /* FIX: navbar je ~82px visok, bio je 60px */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   NAVBAR ANIMATIONS
+   ============================================ */
+@-webkit-keyframes slideDown {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0);     opacity: 1; }
+}
 @keyframes slideDown {
-    0% { transform: translateY(-100%); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-  
-  /* Navbar */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.6s ease forwards;
-  }
-  
-  .navbar .logo {
-    height: 60px;
-    width: auto;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2)); /* Blagi senka */
-    transition: transform 0.3s ease;
-  }
-  .navbar .logo:hover {
-    transform: scale(1.05); /* Blagi zoom efekat */
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    font-size: 16px;
-  }
-  
-  .nav-links a {
-    color: #00A4D9; /* Dark blue */
-    font-weight: 600;
-    font-size: 16px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-links a:hover {
-    background-color: #E0F2F1;
-    color: #004D40; /* Darker shade */
-  }
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-  }
-  .hamburger .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #018d7c;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
-  
-/* Responzivni dizajn */
+  0%   { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0);     opacity: 1; }
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* FIX: bio dupli box-shadow, sada samo jedan */
+  -webkit-animation: slideDown 0.6s ease forwards;
+  animation: slideDown 0.6s ease forwards;
+}
+
+/* FIX: logo klasa je na div-u, img je unutra — sad ispravno targetan */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links li {
+  font-size: 16px;
+}
+
+.nav-links a {
+  color: #00A4D9;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #E0F2F1;
+  color: #004D40;
+}
+
+/* FIX: active link highlight — korisnik vidi na kojoj je stranici */
+.nav-links a.active {
+  background-color: #E0F2F1;
+  color: #004D40;
+}
+
+/* ============================================
+   HAMBURGER
+   ============================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #018d7c;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* FIX: X animacija kad je menu otvoren */
+.hamburger.open .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open .bar:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ============================================
+   RESPONSIVE NAVBAR
+   ============================================ */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     position: absolute;
-    top: 70px;
-    right: 30px;
+    top: 80px;
+    right: 20px;
     background-color: white;
-    width: 250px;
-    border-radius: 8px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 240px;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
     flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    animation: slideDown 0.6s ease forwards;
+    gap: 4px;
+    padding: 12px;
+    -webkit-animation: slideDown 0.3s ease forwards;
+    animation: slideDown 0.3s ease forwards;
   }
 
   .nav-links.active {
@@ -94,32 +165,281 @@
   }
 
   .nav-links li {
-    font-size: 18px;
+    font-size: 16px;
+    width: 100%;
   }
 
   .nav-links a {
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+  }
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero-section {
+  font-family: var(--font-inter);
+  position: relative;
+  min-height: 100vh;
+  background-color: #0097A7;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.hero-section h1 {
+  font-size: clamp(32px, 6vw, 56px); /* FIX: bio fiksnih 48px, sad responsivan */
+  font-weight: bold;
+  line-height: 1.15;
+}
+
+.hero-section h2 {
+  font-size: clamp(16px, 2.5vw, 22px); /* FIX: responsivan */
+  font-weight: 400;
+  margin-top: 20px;
+  opacity: 0.9;
+}
+
+.hero-section p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.cta-btn {
+  font-family: var(--font-inter);
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #004D40;
+  color: white;
+  font-weight: bold;
+  margin-top: 30px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #00A4D9;
+}
+
+/* ============================================
+   CONTAINER & CARDS
+   ============================================ */
+.container {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ============================================
+   WHY US SECTION
+   ============================================ */
+.whyus-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+  color: #333;
+}
+
+.whyus-section .section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.whyus-section .section-subtitle {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-bottom: 50px;
+}
+
+.whyus-logo {
+  display: block;
+  margin: 0 auto 40px;
+  max-width: 220px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.whyus-logo:hover {
+  transform: scale(1.1);
+}
+
+.whyus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+}
+
+.whyus-card {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whyus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.whyus-card h4 {
+  font-size: 20px;
+  color: #00A4D9;
+  margin-bottom: 15px;
+}
+
+.whyus-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background-color: #00A4D9;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer p {
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* FIX: emailovi na mobilnom se ne lome ružno */
+.contact-emails {
+  margin-top: 16px;
+}
+
+.contact-emails p {
+  font-size: 14px;
+  word-break: break-word; /* FIX: spriječava overflow na uskim ekranima */
+}
+
+.contact-emails a {
+  color: white;
+  text-decoration: underline;
+  transition: opacity 0.2s;
+}
+
+.contact-emails a:hover {
+  opacity: 0.8;
+}
+
+.social-icons {
+  margin-top: 16px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #E0F7FA;
+}
+
+/* FIX: footer address na mobilnom */
+.copyright {
+  white-space: pre-line;
+  font-size: 13px;
+  opacity: 0.85;
+  margin-top: 16px;
+}
+
+/* ============================================
+   MOBILE — opšti
+   ============================================ */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 80px 16px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .whyus-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-icons a {
+    margin: 0 8px;
     font-size: 18px;
   }
 }
-  /* Footer */
-  .footer {
-    background-color: #00A4D9;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-  }
-    
-  .footer p {
-    margin-top: 20px;
-    font-size: 14px;
-  }
-  .social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 20px;
-    transition: color 0.3s;
-  }
-  
-  .social-icons a:hover {
-    color: #E0F7FA;
-  }
