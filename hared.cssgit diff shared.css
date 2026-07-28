@@ -1,0 +1,60 @@
+[1mdiff --git a/script.js b/script.js[m
+[1mindex e921be1..a7481bb 100644[m
+[1m--- a/script.js[m
+[1m+++ b/script.js[m
+[36m@@ -1,6 +1,50 @@[m
+[31m-// JavaScript for handling form submission[m
+[31m-[m
+[32m+[m[32m// ============================================[m
+[32m+[m[32m// HAMBURGER MENU[m
+[32m+[m[32m// ============================================[m
+ function toggleMenu() {[m
+[31m-  const navLinks = document.querySelector('.nav-links');[m
+[31m-  navLinks.classList.toggle('active');[m
+[32m+[m[32m  const nav = document.getElementById('navLinks');[m
+[32m+[m[32m  const hamburger = document.getElementById('hamburger');[m
+[32m+[m[32m  nav.classList.toggle('active');[m
+[32m+[m[32m  hamburger.classList.toggle('open');[m
+ }[m
+[32m+[m
+[32m+[m[32m// Zatvori menu klikom na link[m
+[32m+[m[32mdocument.querySelectorAll('.nav-links a').forEach(link => {[m
+[32m+[m[32m  link.addEventListener('click', () => {[m
+[32m+[m[32m    document.getElementById('navLinks').classList.remove('active');[m
+[32m+[m[32m    document.getElementById('hamburger').classList.remove('open');[m
+[32m+[m[32m  });[m
+[32m+[m[32m});[m
+[32m+[m
+[32m+[m[32m// Zatvori menu klikom van njega[m
+[32m+[m[32mdocument.addEventListener('click', (e) => {[m
+[32m+[m[32m  const nav = document.getElementById('navLinks');[m
+[32m+[m[32m  const hamburger = document.getElementById('hamburger');[m
+[32m+[m[32m  if (!nav || !hamburger) return;[m
+[32m+[m[32m  if (!nav.contains(e.target) && !hamburger.contains(e.target)) {[m
+[32m+[m[32m    nav.classList.remove('active');[m
+[32m+[m[32m    hamburger.classList.remove('open');[m
+[32m+[m[32m  }[m
+[32m+[m[32m});[m
+[32m+[m
+[32m+[m[32m// ============================================[m
+[32m+[m[32m// ACTIVE LINK HIGHLIGHT[m
+[32m+[m[32m// ============================================[m
+[32m+[m[32m(function () {[m
+[32m+[m[32m  const links = document.querySelectorAll('.nav-links a');[m
+[32m+[m[32m  const current = window.location.pathname;[m
+[32m+[m
+[32m+[m[32m  links.forEach(link => {[m
+[32m+[m[32m    const href = link.getAttribute('href');[m
+[32m+[m[32m    if (!href) return;[m
+[32m+[m
+[32m+[m[32m    // Normalizuj path (ukloni trailing slash)[m
+[32m+[m[32m    const normalize = (p) => p.replace(/\/+$/, '') || '/';[m
+[32m+[m[32m    const linkPath = normalize(new URL(href, window.location.origin).pathname);[m
+[32m+[m[32m    const curPath  = normalize(current);[m
+[32m+[m
+[32m+[m[32m    if (linkPath === curPath) {[m
+[32m+[m[32m      link.classList.add('active');[m
+[32m+[m[32m    }[m
+[32m+[m[32m  });[m
+[32m+[m[32m})();[m
+\ No newline at end of file[m
