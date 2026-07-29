@@ -1,5 +1,4 @@
-@'
-function toggleMenu() {
+﻿function toggleMenu() {
   const nav = document.querySelector('.nav-links');
   const hamburger = document.querySelector('.hamburger');
   nav.classList.toggle('active');
@@ -37,4 +36,3 @@ document.addEventListener('click', (e) => {
     }
   });
 })();
-'@ | Set-Content -Path script.js -Encoding UTF8

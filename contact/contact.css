@@ -200,3 +200,17 @@
   color: #B71C1C;
   border: 1px solid #E57373;
 }
+
+@media (max-width: 480px) {
+  .contact-section h2 {
+    font-size: 26px;
+  }
+  .contact-form {
+    padding: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
