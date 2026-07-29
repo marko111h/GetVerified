@@ -416,3 +416,73 @@ pre {
     margin-left: 0;
   }
 }
+.code-tabs {
+  display: flex;
+  gap: 2px;
+  background-color: #EAF6FB;
+  padding: 8px 14px 0;
+}
+
+.code-tab {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #607D8B;
+  background: none;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+}
+
+.code-tab:hover {
+  color: #00728F;
+}
+
+.code-tab.active {
+  background-color: #0B2A3B;
+  color: #D6EFFF;
+}
+
+.code-block {
+  display: none;
+  margin: 0;
+  border-radius: 0;
+}
+
+.code-block.active {
+  display: block;
+}
+
+.copy-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #607D8B;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.copy-btn:hover {
+  color: #00728F;
+  background-color: rgba(0, 164, 217, 0.1);
+}
+
+.copy-btn.copied {
+  color: #2E7D32;
+}
+
+.copy-btn-dark {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.copy-btn-dark:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.copy-btn-dark.copied {
+  color: #A5D6A7;
+}
