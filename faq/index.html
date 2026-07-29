@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Verified | FAQ</title>
+  <meta name="description" content="Frequently asked questions about Get Verified's SMS, WhatsApp, Viber and RCS messaging services, API access, and billing.">
+  <meta property="og:title" content="Get Verified | FAQ">
+  <meta property="og:description" content="Frequently asked questions about Get Verified's messaging services, API access, and billing.">
+  <meta property="og:image" content="https://get-verified.net/assets/FullLogo.png">
+  <meta property="og:url" content="https://get-verified.net/faq/">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="faq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../assets/FullLogo_Transparent.png" alt="Get Verified logo" class="logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/services/index.html">Services</a></li>
+      <li><a href="/aboutus/index.html">About Us</a></li>
+      <li><a href="/api/index.html">API</a></li>
+      <li><a href="/faq/index.html">FAQ</a></li>
+      <li><a href="/contact/index.html">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero-section">
+    <h1>Frequently Asked Questions</h1>
+    <p>Answers to what clients ask us most before integrating.</p>
+  </div>
+
+  <!-- FAQ Accordion -->
+  <main class="faq-container">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>What messaging channels does Get Verified support?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>We support SMS (A2P), WhatsApp Business, Viber, and RCS messaging, along with HLR lookup and number verification services.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Which countries do you cover?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>We offer global coverage, reaching virtually every country worldwide through our carrier network.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How do I get API access?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Reach out via our <a href="/contact/index.html">Contact page</a> or email <a href="mailto:sales@get-verified.net">sales@get-verified.net</a> with your expected use case and volume. We'll provide your API credentials and onboarding host after a short setup call.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Is there a free trial or test credits?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Yes, we offer a free trial. Contact our sales team to get started with test credits.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>GET vs POST — which should I use for the API?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Both work identically for sending messages. We recommend POST with HTTPS and an Authorization header for production use, since GET requests can expose credentials in server logs. See our <a href="/api/index.html">API documentation</a> for details.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How fast is message delivery?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Delivery time depends on the destination network, but our intelligent routing typically delivers messages within seconds under normal conditions.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Do you support Two-Factor Authentication (2FA) / OTP use cases?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Yes — our Verifications service is built specifically for one-time password delivery and identity verification via SMS.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>How is billing calculated?</span>
+        <i class="fas fa-chevron-down faq-icon"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Billing is flexible — we support both postpaid and prepaid arrangements, depending on what works best for your business.</p>
+      </div>
+    </div>
+
+    <div class="faq-cta">
+      <p>Still have questions?</p>
+      <a href="/contact/index.html" class="faq-cta-btn">Contact us</a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <div class="contact-emails">
+      <p>Contact us:
+        <a href="mailto:info@get-verified.net">info@get-verified.net</a> |
+        <a href="mailto:sales@get-verified.net">sales@get-verified.net</a> |
+        <a href="/faq/index.html">FAQ</a>
+      </p>
+    </div>
+    <p class="copyright">Kypranoros, 13
+      EVI BUILDING, 2nd floor, Flat/Office 201
+      1061, Nicosia, Cyprus</p>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script src="faq.js"></script>
+</body>
+</html>
+
+
