@@ -118,7 +118,7 @@ img {
 }
 
 .nav-links a {
-  color: #00A4D9;
+  color: var(--accent);
   font-weight: 600;
   font-size: 16px;
   padding: 8px 12px;
@@ -151,7 +151,7 @@ img {
 .hamburger .bar {
   width: 25px;
   height: 3px;
-  background-color: #018d7c;
+  background-color: var(--accent);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
@@ -293,11 +293,12 @@ img {
 }
 
 .card {
-  background: #fff;
+  background: var(--card-bg);
   padding: 25px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  
 }
 
 .card:hover {
@@ -364,7 +365,7 @@ img {
 }
 
 .whyus-card {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   padding: 30px 20px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
