@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 :root {
   --bg: #FFFFFF;
   --bg-soft: #FAFCFC;
@@ -9,6 +9,14 @@
   --border: #E7EEF1;
   --card-bg: #FFFFFF;
   --navbar-bg: #FFFFFF;
+  --highlight-bg: #E0F2F1;
+  --highlight-text: #004D40;
+  --warn-bg: #FFF8E1;
+  --warn-title: #9A6B00;
+  --warn-text: #6B5000;
+  --code-header-bg: #EAF6FB;
+  --error-soft-bg: #FDECEA;
+  --error-soft-text: #B71C1C;
 }
 
 [data-theme="dark"] {
@@ -21,6 +29,14 @@
   --border: #1D3D4F;
   --card-bg: #132C3B;
   --navbar-bg: #132C3B;
+  --highlight-bg: rgba(0, 164, 217, 0.15);
+  --highlight-text: #7FDCC4;
+  --warn-bg: #3A2E0A;
+  --warn-title: #FFD98A;
+  --warn-text: #E8C777;
+  --code-header-bg: #0F2836;
+  --error-soft-bg: #3A1A18;
+  --error-soft-text: #FF8A80;
 }
 
 /* ============================================
@@ -170,7 +186,7 @@ img {
     position: absolute;
     top: 80px;
     right: 20px;
-    background-color: white;
+    background-color: var(--card-bg);
     width: 240px;
     border-radius: 12px;
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
@@ -325,22 +341,22 @@ img {
    WHY US SECTION
    ============================================ */
 .whyus-section {
-  background-color: #f9f9f9;
+  background-color: var(--bg-soft);
   padding: 60px 20px;
   text-align: center;
-  color: #333;
+  color: var(--text);
 }
 
 .whyus-section .section-title {
   font-size: 36px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text);
   margin-bottom: 10px;
 }
 
 .whyus-section .section-subtitle {
   font-size: 18px;
-  color: #7f8c8d;
+  color: var(--text-sub);
   margin-bottom: 50px;
 }
 
@@ -494,3 +510,6 @@ img {
 .theme-toggle:hover {
   background-color: var(--border);
 }
+
+
+
