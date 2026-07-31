@@ -59,7 +59,7 @@ a {
 }
 
 .about-content section:hover {
-    background-color: #F5FDFF;
+    background-color: var(--card-hover);
 }
 
 .about-content section:last-child {
@@ -98,7 +98,7 @@ a {
 
 .about-content p {
     font-size: 17px;
-    color: #424242;
+    color: var(--text-sub);
     line-height: 1.7;
     text-align: justify;
 }
@@ -124,3 +124,4 @@ footer {
     margin: 30px auto;
   }
 }
+

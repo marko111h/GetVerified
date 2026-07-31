@@ -8,7 +8,7 @@
   --amber: #FFB020;
   --border: #E7EEF1;
   --card-bg: #FFFFFF;
-  --navbar-bg: #FFFFFF;
+  --navbar-bg: #FAFCFC;
   --highlight-bg: #E0F2F1;
   --highlight-text: #004D40;
   --warn-bg: #FFF8E1;
@@ -17,18 +17,21 @@
   --code-header-bg: #EAF6FB;
   --error-soft-bg: #FDECEA;
   --error-soft-text: #B71C1C;
+  --card-hover: #F5FDFF;
+  --resp-success-bg: #EEF8EF;
+  --resp-error-bg: #FDEDED;
 }
 
 [data-theme="dark"] {
   --bg: #0B1F2B;
-  --bg-soft: #132C3B;
+  --bg-soft: #0B1F2B;
   --text: #FAFCFC;
   --text-sub: #8FA3AF;
   --accent: #00A4D9;
   --amber: #FFB020;
   --border: #1D3D4F;
   --card-bg: #132C3B;
-  --navbar-bg: #132C3B;
+  --navbar-bg: #0B1F2B;
   --highlight-bg: rgba(0, 164, 217, 0.15);
   --highlight-text: #7FDCC4;
   --warn-bg: #3A2E0A;
@@ -37,6 +40,9 @@
   --code-header-bg: #0F2836;
   --error-soft-bg: #3A1A18;
   --error-soft-text: #FF8A80;
+  --card-hover: #17364A;
+  --resp-success-bg: rgba(46,125,50,0.18);
+  --resp-error-bg: rgba(198,40,40,0.18);
 }
 
 /* ============================================
@@ -100,7 +106,7 @@ img {
   left: 0;
   z-index: 1000;
   border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* FIX: bio dupli box-shadow, sada samo jedan */
+  box-shadow: none;
   -webkit-animation: slideDown 0.6s ease forwards;
   animation: slideDown 0.6s ease forwards;
 }
@@ -143,14 +149,14 @@ img {
 }
 
 .nav-links a:hover {
-  background-color: #E0F2F1;
-  color: #004D40;
+  background-color: var(--highlight-bg);
+  color: var(--highlight-text);
 }
 
 /* FIX: active link highlight — korisnik vidi na kojoj je stranici */
 .nav-links a.active {
-  background-color: #E0F2F1;
-  color: #004D40;
+  background-color: var(--highlight-bg);
+  color: var(--highlight-text);
 }
 
 /* ============================================
@@ -274,7 +280,7 @@ img {
   font-family: var(--font-inter);
   display: inline-block;
   padding: 15px 30px;
-  background-color: #004D40;
+  background-color: var(--highlight-text);
   color: white;
   font-weight: bold;
   margin-top: 30px;
@@ -334,7 +340,7 @@ img {
 
 .card p {
   font-size: 0.95rem;
-  color: #555;
+  color: var(--text-sub);
 }
 
 /* ============================================
@@ -401,7 +407,7 @@ img {
 
 .whyus-card p {
   font-size: 16px;
-  color: #555;
+  color: var(--text-sub);
   line-height: 1.6;
 }
 
@@ -513,3 +519,54 @@ img {
 
 
 
+
+
+
+
+
+
+
+/* --- THEME VARS: hero i footer (override) --- */
+:root {
+  --hero-bg: #00A4D9;
+  --hero-text: #FFFFFF;
+  --footer-bg: #00A4D9;
+}
+
+[data-theme="dark"] {
+  --hero-bg: #0A1922;
+  --hero-text: #FAFCFC;
+  --footer-bg: #0A1922;
+}
+
+/* ============================================
+   THEME: hero i footer
+   ============================================ */
+:root {
+  --hero-bg: #00A4D9;
+  --hero-text: #FFFFFF;
+  --footer-bg: #00A4D9;
+}
+
+[data-theme="dark"] {
+  --hero-bg: #0A1922;
+  --hero-text: #FAFCFC;
+  --footer-bg: #0A1922;
+}
+
+.hero-section {
+  background-color: var(--hero-bg) !important;
+  color: var(--hero-text) !important;
+  transition: background-color 0.3s ease;
+}
+
+.hero-section h1,
+.hero-section h2,
+.hero-section p {
+  color: var(--hero-text) !important;
+}
+
+.footer {
+  background-color: var(--footer-bg) !important;
+  transition: background-color 0.3s ease;
+}

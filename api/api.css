@@ -40,7 +40,7 @@ header h1 {
 }
 
 header .subtitle {
-  color: #607D8B;
+  color: var(--text-sub);
   font-size: 16px;
   margin-top: 10px;
 }
@@ -76,14 +76,14 @@ h2, h3, h4 {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #90A4AE;
+  color: var(--text-sub);
   margin-bottom: 8px;
 }
 
 .api-toc a {
   font-size: 14px;
   font-weight: 500;
-  color: #455A64;
+  color: var(--text-sub);
   padding: 8px 12px;
   border-radius: 8px;
   border-left: 3px solid transparent;
@@ -91,7 +91,7 @@ h2, h3, h4 {
 }
 
 .api-toc a:hover {
-  background-color: #E0F2F1;
+  background-color: var(--highlight-bg);
   color: #007aab;
   border-left-color: #00A4D9;
 }
@@ -120,7 +120,7 @@ h2, h3, h4 {
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   font-weight: 600;
-  color: #90A4AE;
+  color: var(--text-sub);
   letter-spacing: 0.08em;
   margin-bottom: 6px;
 }
@@ -136,13 +136,13 @@ h2, h3, h4 {
 }
 
 .api-section p {
-  color: #37474F;
+  color: var(--text);
   font-size: 15.5px;
 }
 
 .api-section p.note {
   margin-top: 14px;
-  color: #607D8B;
+  color: var(--text-sub);
   font-size: 14px;
 }
 
@@ -153,7 +153,7 @@ h2, h3, h4 {
   display: flex;
   gap: 18px;
   align-items: flex-start;
-  background-color: #FFF8E1;
+  background-color: var(--warn-bg);
   border-left: 4px solid #F5A623;
 }
 
@@ -165,13 +165,13 @@ h2, h3, h4 {
 }
 
 .security-notice h2 {
-  color: #9A6B00;
+  color: var(--warn-title);
   font-size: 18px;
   margin-bottom: 8px;
 }
 
 .security-notice p {
-  color: #6B5000;
+  color: var(--warn-text);
   font-size: 14.5px;
 }
 
@@ -221,13 +221,13 @@ pre {
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  background-color: #EAF6FB;
+  background-color: var(--code-header-bg);
 }
 
 .endpoint-title {
   font-weight: 600;
   font-size: 13.5px;
-  color: #26525F;
+  color: var(--text);
 }
 
 .method-badge {
@@ -290,17 +290,17 @@ pre {
 }
 
 .response-card.success .response-head {
-  background-color: #EEF8EF;
+  background-color: var(--resp-success-bg);
 }
 
 .response-card.error .response-head {
-  background-color: #FDEDED;
+  background-color: var(--resp-error-bg);
 }
 
 .response-title {
   font-weight: 600;
   font-size: 13.5px;
-  color: #37474F;
+  color: var(--text);
 }
 
 .status-badge {
@@ -329,14 +329,14 @@ pre {
 .parameter-table th,
 .parameter-table td {
   padding: 13px 16px;
-  border-bottom: 1px solid #ECEFF1;
+  border-bottom: 1px solid var(--border);
   text-align: left;
   vertical-align: top;
 }
 
 .parameter-table th {
-  background-color: #F5FBFE;
-  color: #37474F;
+  background-color: var(--code-header-bg);
+  color: var(--text);
   font-size: 12.5px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -344,7 +344,7 @@ pre {
 }
 
 .parameter-table tr:hover td {
-  background-color: #FAFDFF;
+  background-color: var(--card-hover);
 }
 
 .pill {
@@ -362,7 +362,7 @@ pre {
 
 .pill-optional {
   background-color: #ECEFF1;
-  color: #607D8B;
+  color: var(--text-sub);
 }
 
 /* ============================================
@@ -421,7 +421,7 @@ pre {
 .code-tabs {
   display: flex;
   gap: 2px;
-  background-color: #EAF6FB;
+  background-color: var(--code-header-bg);
   padding: 8px 14px 0;
 }
 
@@ -429,7 +429,7 @@ pre {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 12.5px;
   font-weight: 600;
-  color: #607D8B;
+  color: var(--text-sub);
   background: none;
   border: none;
   padding: 8px 14px;
@@ -460,7 +460,7 @@ pre {
   margin-left: auto;
   background: none;
   border: none;
-  color: #607D8B;
+  color: var(--text-sub);
   font-size: 13px;
   cursor: pointer;
   padding: 6px 10px;
@@ -490,3 +490,38 @@ pre {
 }
 
 
+
+
+/* --- THEME FIX: tabela parametara --- */
+.parameter-table th {
+  background-color: var(--code-header-bg) !important;
+  color: var(--text) !important;
+}
+
+.parameter-table td {
+  color: var(--text) !important;
+  background-color: transparent;
+}
+
+.parameter-table tr:hover td {
+  background-color: var(--card-hover) !important;
+}
+
+.parameter-table th,
+.parameter-table td {
+  border-bottom: 1px solid var(--border) !important;
+}
+
+.response-title,
+.endpoint-title {
+  color: var(--text) !important;
+}
+
+.api-toc a {
+  color: var(--text-sub) !important;
+}
+
+.api-toc a:hover {
+  color: var(--accent) !important;
+  background-color: var(--highlight-bg) !important;
+}

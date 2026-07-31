@@ -215,3 +215,27 @@
     font-size: 15px;
   }
 }
+
+/* --- THEME FIX: contact sekcije --- */
+.contact-section {
+  background-color: var(--bg-soft) !important;
+  transition: background-color 0.3s ease;
+}
+
+.contact-img,
+.contact-logo-box {
+  background-color: var(--card-bg) !important;
+}
+
+.contact-section h2,
+.contact-section p {
+  color: var(--text);
+}
+
+/* --- THEME FIX: logo bez kutije --- */
+.contact-img {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  max-width: 420px !important;
+}
