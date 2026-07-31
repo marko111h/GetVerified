@@ -39,9 +39,10 @@
 
 body {
   font-family: var(--font-inter), var(--font-default);
-  background-color: #E0F7FA;
-  color: #212121;
-  padding-top: 82px; /* FIX: navbar je ~82px visok, bio je 60px */
+  background-color: var(--bg-soft);
+  color: var(--text);
+  padding-top: 82px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -75,7 +76,8 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-  background-color: white;
+  background-color:  var(--navbar-bg);
+  transition: background-color 0.3s ease;
   position: fixed;
   width: 100%;
   top: 0;
