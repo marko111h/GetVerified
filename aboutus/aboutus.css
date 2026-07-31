@@ -10,9 +10,10 @@ html, body {
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #E0F7FA;
-    color: #212121;
+    background-color: var(--bg-soft);
+    color: var(--text);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -44,9 +45,10 @@ a {
     max-width: 1000px;
     margin: 60px auto;
     padding: 0 20px;
-    background-color: white;
+    background-color: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
 }
 
 .about-content section {

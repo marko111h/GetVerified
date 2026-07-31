@@ -36,3 +36,27 @@ document.addEventListener('click', (e) => {
     }
   });
 })();
+
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+  const icon = themeToggle.querySelector('i');
+
+  function updateIcon() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  }
+
+  updateIcon();
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    updateIcon();
+  });
+}
