@@ -1,4 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+:root {
+  --bg: #FFFFFF;
+  --bg-soft: #FAFCFC;
+  --text: #0B1F2B;
+  --text-sub: #5C7A8A;
+  --accent: #00A4D9;
+  --amber: #FFB020;
+  --border: #E7EEF1;
+  --card-bg: #FFFFFF;
+  --navbar-bg: #FFFFFF;
+}
+
+[data-theme="dark"] {
+  --bg: #0B1F2B;
+  --bg-soft: #132C3B;
+  --text: #FAFCFC;
+  --text-sub: #8FA3AF;
+  --accent: #00A4D9;
+  --amber: #FFB020;
+  --border: #1D3D4F;
+  --card-bg: #132C3B;
+  --navbar-bg: #132C3B;
+}
 
 /* ============================================
    RESET & ROOT
